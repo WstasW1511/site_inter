@@ -1,0 +1,302 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/media/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/media/js/scripts.js"></script>
+      <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+              rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+              crossorigin="anonymous">
+
+
+    <title>ТОО Интерком</title>
+  </head>
+  <body>
+                    <header>
+                      <div class="collapse bg-dark" id="navbarHeader">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-sm-4 offset-md-1 py-4">
+                              <a href="#ya1" class="text-white">Цинкование</a>
+                                <p class="text-muted">Мы предлагаем <b>собственные</b> услуги по нанесению гальванического Цинка(<b>Цинкование</b>). <br>Если Вам не хочется связываться с покупкой металла, доставкой и т.д. Мы можем взять все на себя, и поставить в Ваш адрес готовую оцинкованную продукцию. <br><br>Так же всегда в наличии полоса стальная оцинкованная 40х4, 30x4, 25x4.
+                            </div>
+                            <div class="col-sm-4 offset-md-1 py-4">
+                              <a href="#ya2" class="text-white">Системы заземления</a>
+                                <p class="text-muted">За время существования нашей компании, мы наладили производство модульно штыревой системы заземления.<br>В нашу продукцию входит:<br> <b>Омедненная</b> и <b>Оцинкованная</b> системы заземления</p>
+                            </div>
+                            <div class="col-sm-8 offset-md-3 py-4">
+                              <h4 class="text-white">Контакты</h4>
+                                <p class="text-muted">Товарищество с ограниченной ответственностью "Интерком",<br>Руспублика Казахстан, г.Алматы, ул.Гете 257/7,Тел.: +7 727 257 95 21,Тел.: +7 707 775 92 35</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="navbar navbar-dark bg-dark shadow-sm">
+                        <div class="container">
+                          <a href="#" class="navbar-brand d-flex align-items-center">
+                            <strong>ТОО Интерком</strong>
+                          </a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </header>
+                  <section class="py-5 text-center container">
+                    <div class="row py-lg-5">
+                      <div class="col-lg-8 col-md-8 mx-auto" id="wel">
+                          {% for i in home %}
+                          <h1 class="fw-light">
+                             {{ i.title }}
+                          </h1>
+                        <p class="lead text-muted"><b>{{ i.welcome }}</b>
+                        </p>
+                        <p>
+                          <a href="#ya1" class="btn btn-secondary my-2" style="width: 200px;">Цинкование</a>
+                          <a href="#ya2" class="btn btn-secondary my-2" style="width: 200px;">Системы заземления</a>
+                        </p>
+                          {% endfor %}
+                      </div>
+                    </div>
+                  </section>
+                <section class="py-5 text-center container">
+                    <div class="row py-lg-5">
+                        <div class="col-lg-12 col-md-8 mx-auto">
+                            {% for i in galvan %}
+                        <h1 class="fw-light" id="ya1"><b>{{ i.title }}</b></h1>
+                        <p>{{ i.description_galvanize }}</p>
+                                </div>
+                          </div>
+                          </section>
+                <div class="album py-5 bg-light">
+                    <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="/media/{{i.zink_image_1|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image1 }}</text>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                        </div>
+                                    </div>
+                             </div>
+                        </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="/media/{{i.zink_image_2|safe}}">
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image2 }}</text>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="/media/{{i.zink_image_3|safe}}">
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image3 }}</text>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                        <p class="float-end mb-1">
+                            <a href="#" onclick="smoothJumpUp(); return false;"> <b>Наверх</b></a>
+                        </p>
+                    </div>
+                </div>
+    {% endfor %}
+    </section>
+              <section class="py-5 text-center container">
+                    <div class="row py-lg-5">
+                        <div class="col-lg-12 col-md-8 mx-auto">
+                                 {%  for i in cuprum %}
+                            <h1 class="fw-light" id="ya2"><b>{{ i.title }}</b></h1>
+                                     <p>{{ i.description_cuprum }}</p>
+                        </div>
+                  </div>
+                <div class="col-lg-8 col-md-8 mx-auto">
+                    <h2 class="fw-light"><b>{{ i.cuprum_set }}</b></h2>
+                </div>
+                  <div class="album py-5 bg-light">
+                    <div class="container">
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.cuprum_image_1|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image1 }}</text>
+                            <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <div class="popup" >
+                                        <span class="popuptext" id="myPopup">В комплект входит:<br>
+
+                                                                              1. Стержень омедн. D14 L=1500мм  - 4 шт.<br>
+                                                                              2. Муфта латунная (D14) - 4 шт.<br>
+                                                                              3. Наконечник стартовый (D14) - 1 шт.<br>
+                                                                              4. Зажим универсальный - 1 шт.<br>
+                                                                              5. Головка ударная (D14) - 1 шт.<br>
+                                                                              6. Смазка 100 гр. - 1 шт.<br>
+
+
+                                                                              Масса - 8 кг.</span>
+                  </div>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="myFunc();">Подробнее</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.cuprum_image_2|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image2 }}</text>
+                            <div class="card-body">
+                               <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <div class="popup" >
+                                        <span class="popuptext" id="myPopup1">В комплект входит:<br>
+
+                                        1. Стержень омедн. D14 L=1500мм  - 6 шт.<br>
+                                        2. Муфта латунная (D14)                   - 6 шт.<br>
+                                        3. Наконечник стартовый (D14)         - 3 шт.<br>
+                                        4. Зажим универсальный                   - 3 шт.<br>
+                                        5. Головка направляющая (D14)       - 2 шт.<br>
+                                        6. Насадка SDS-max                          - 1 шт.<br>
+                                        7. Смазка 100 гр.                                - 1 шт.<br>
+
+
+                                                                              Масса - 14 кг.</span>
+                  </div>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="myFunc1()">Подробнее</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.cuprum_image_3|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image3 }}</text>
+                            <div class="card-body">
+                               <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <br>
+{#                                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>#}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                        {% endfor %}
+
+                {% for i in zink_set %}
+                <div class="col-lg-8 col-md-8 mx-auto">
+                        <h2 class="fw-light"><b>{{ i.title }}</b></h2>
+                </div>
+                  <div class="album py-5 bg-light">
+                    <div class="container">
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.zinks_image_1|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image1 }}</text>
+                            <div class="card-body">
+                               <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <div class="popup" >
+                                    <span class="popuptext" id="myPopup2">В комплект входит:<br>
+
+                                          1. Стержень оцинк. D16 L=1500мм  - 4 шт.<br>
+                                          2. Муфта оцинк. (D16) - 4 шт.<br>
+                                          3. Наконечник стартовый (D16) - 1 шт.<br>
+                                          4. Зажим универсальный оцинк - 1 шт.<br>
+                                          5. Головка ударная (D16) - 1 шт.<br>
+                                          6. Смазка 100 гр. - 1 шт.<br>
+
+                                          Масса - 10 кг. </span>
+</div>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="myFunc2()">Подробнее</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.zinks_image_2|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image2 }}</text>
+                            <div class="card-body">
+                               <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <div class="popup" >
+                                        <span class="popuptext" id="myPopup3">В комплект входит:<br>
+
+                                          1. Стержень оцинк. D16 L=1500мм  - 6 шт.<br>
+                                          2. Муфта оцинкованная (D16) - 6 шт.<br>
+                                          3. Наконечник стартовый (D16) - 3 шт.<br>
+                                          4. Зажим универсальный оцинк.- 3 шт.<br>
+                                          5. Головка ударная (D16) - 2 шт.<br>
+                                          6. Насадка SDS-max - 1 шт.<br>
+                                          7. Смазка 100 гр. - 1 шт.<br>
+
+                                          Масса - 17 кг.</span>
+</div>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary"onclick="myFunc3()">Подробнее</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card shadow-sm">
+                            <img src="/media/{{i.zinks_image_3|safe}}">
+                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ i.description_image3 }}</text>
+                            <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div class="btn-group">
+                                      <div class="popup">
+                                        <span class="popuptext" id="myPopup4">Всплывающее...</span>
+                                      </div>
+{#                                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="myFunc4();">Подробнее</button>#}
+                                <br>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div></div></div></div>
+                        {% endfor %}
+              </section>
+            <footer class="text-muted py-5">
+              <div class="container">
+                <p class="float-end mb-1">
+                    <a href="#" onclick="smoothJumpUp(); return false;"> <b>Наверх</b></a>
+
+                </p>
+
+                <p class="mb-1">Товарищество с ограниченной ответственностью "Интерком"</p>
+                <p class="mb-0">Руспублика Казахстан, г.Алматы, ул.Гете 257/7</p>
+
+                <p class="mb-1">Тел.: +7 727 257 95 21</p>
+                <p class="mb-1">Тел.: +7 707 775 92 35</p><br>
+                <div class="container">
+                    <a class="razrab">Сайт разработал - Федорук Станислав</a>
+                </div>
+              </div>
+              </footer>
+  </body>
+</html>

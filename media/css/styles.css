@@ -1,0 +1,94 @@
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+.razrab {
+    font-family: Calibri;
+    font-size:18px;
+    color: steelblue;
+    margin-left: 35%;
+    font-weight: bold;
+
+}
+
+
+/* Всплывающим окном - может быть везде, где угодно */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Фактическое всплывающее окно */
+.popup .popuptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -10px;
+}
+
+/* Всплывающее окно со стрелками */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Переключите этот класс - скрыть и показать всплывающее окно */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
+/* Добавить анимацию (исчезает во всплывающем окне) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+.upbutton {
+    background: url("") no-repeat top left ;
+    height: 60px;
+    width: 60px;
+    bottom: 30px;
+    right: 70px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    z-index: 999;
+}
