@@ -5,6 +5,7 @@ from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 from interkom.serializers import *
 from interkom.models import ZinkSetModel
+from rest_framework.validators import ValidationError
 
 
 class ZinkSetViewSet(mixins.ListModelMixin,
@@ -21,9 +22,13 @@ class ZinkSetViewSet(mixins.ListModelMixin,
         return serializer_class
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        queryset = ZinkSetModel.objects.all()
+        if not queryset:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+        else:
+            raise ValidationError("Запись создана, рабочие методы GET,PUT,DELETE")
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
     def list(self, request, *args, **kwargs):

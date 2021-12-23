@@ -15,6 +15,9 @@ class Home(AbstractUUID, AbstractTimeTracker):
         verbose_name = 'Главная'
         verbose_name_plural = 'Главные'
 
+    def __str__(self):
+        return self.title
+
 
 class Galvanize(AbstractUUID, AbstractTimeTracker):
     title = models.CharField(max_length=500,
@@ -40,6 +43,12 @@ class Galvanize(AbstractUUID, AbstractTimeTracker):
                                           blank=True,
                                           null=True,
                                           verbose_name='Краткое описание фото3')
+    class Meta:
+        verbose_name = 'Цинкование'
+        verbose_name_plural = 'Цинкование'
+
+    def __str__(self):
+        return self.title
 
 
 class Cuprum(AbstractUUID, AbstractTimeTracker):
@@ -72,6 +81,14 @@ class Cuprum(AbstractUUID, AbstractTimeTracker):
                                           null=True,
                                           verbose_name='Краткое описание фото3')
 
+    class Meta:
+        verbose_name = 'Заземление'
+        verbose_name_plural = 'Заземления'
+
+    def __str__(self):
+        return self.title
+
+
 class ZinkSetModel(AbstractUUID, AbstractTimeTracker):
     title = models.CharField(max_length=500,
                              blank=True,
@@ -92,3 +109,10 @@ class ZinkSetModel(AbstractUUID, AbstractTimeTracker):
                                           blank=True,
                                           null=True,
                                           verbose_name='Краткое описание фото3')
+
+    class Meta:
+        verbose_name = 'Цинковый комплект'
+        verbose_name_plural = 'Цинковые комплекты'
+
+    def __str__(self):
+        return self.title
